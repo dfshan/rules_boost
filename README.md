@@ -3,13 +3,13 @@
 To use these rules, add the following to your `WORKSPACE` file:
 
 ```bazel
-load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-git_repository(
+http_archive(
     name = "com_github_nelhage_rules_boost",
-    commit = "1e3a69bf2d5cd10c34b74f066054cd335d033d71",
-    remote = "https://github.com/nelhage/rules_boost",
-    shallow_since = "1591047380 -0700",
+    url = "https://github.com/dfshan/rules_boost/archive/716accc67dc7cd4f7a1988e5ecc8e3e3ccd3cdcf.zip",
+    strip_prefix = "rules_boost-716accc67dc7cd4f7a1988e5ecc8e3e3ccd3cdcf",
+    sha256 = "0d0f871812224842ce595f9a8f70cd8ac0980ce6cb025f97afe3e8cb7ec70c4e",
 )
 
 load("@com_github_nelhage_rules_boost//:boost/boost.bzl", "boost_deps")
